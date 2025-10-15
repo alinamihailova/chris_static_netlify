@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "chris_static",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"emeraldwalk.runonsave": {
+			"commands": [
+				{
+					"match": ".*",
+					"isAsync": true,
+					"cmd": "echo 'Building...' && ./build.sh"
+				}
+			]
+		}
+	}
+}

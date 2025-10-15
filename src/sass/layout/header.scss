@@ -1,0 +1,125 @@
+header {
+    font-size: var(--stf);
+    color: var(--orange);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    strong {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .hero-text {
+        a {
+            border: 1px solid var(--orange);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        a:hover {
+            background-color: var(--light-brown);
+        }
+    }
+
+
+}
+
+@include breakpoint(0, $mobile) {
+    header {
+        padding: var(--stp);
+        background-size: cover;
+        background-position: center;
+        height: 100vw;
+        position: relative;
+
+        .hero-text {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            width: 50%;
+            bottom: 10%;
+            padding-inline-end: var(--stp);
+
+            h1 {
+                font-size: rem(38);
+                padding-bottom: rem(20);
+            }
+
+            a {
+                padding: rem(8) rem(20);
+            }
+
+        }
+    }
+}
+
+@include breakpoint($desktop) {
+    header {
+        height: 95dvh;
+        padding: var(--p40) var(--p32);
+        background-color: black;
+        background-position: center right;
+        display: flex;
+        justify-content: space-between;
+
+        .hero-text {
+            position: absolute;
+            top: 40vh;
+            left: rem(187);
+            vertical-align: middle;
+
+            h1 {
+                font-size: rem(70);
+                padding-bottom: var(--stp);
+            }
+
+            a {
+                padding: rem(8) rem(16);
+
+            }
+        }
+    }
+}
+
+// Responsive Hero Image
+@include breakpoint(0, 749) {
+    header {
+        background-image: url('./images/chris_hero-750.webp');
+    }
+}
+
+@include breakpoint(750, 1499) {
+    header {
+        background-image: url('./images/chris_hero-1500.webp');
+    }
+}
+
+@include breakpoint(1500) {
+    header {
+        background-image: url('./images/chris_hero-3000.webp');
+    }
+}
+
+// 2x
+@media only screen and (max-width: 349px) and (min-resolution: 192dpi) {
+    header {
+        background-image: url('./images/chris_hero-750.webp');
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 749px) and (min-resolution: 192dpi) {
+    header {
+        background-image: url('./images/chris_hero-1500.webp');
+    }
+}
+
+@media only screen and (min-width: 750px) and (min-resolution: 192dpi) {
+    header {
+        background-image: url('./images/chris_hero-3000.webp');
+    }
+}

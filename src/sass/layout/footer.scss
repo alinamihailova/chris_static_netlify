@@ -1,0 +1,62 @@
+footer {
+    background-color: var(--grey);
+    color: var(--white);
+
+    small,
+    a,
+    h2,
+    h3 {
+        font-size: var(--stf);
+    }
+
+    a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .imprint {
+        color: var(--orange);
+        text-decoration: none;
+    }
+}
+
+@include breakpoint(0, $mobile) {
+    footer {
+        padding: var(--p32) var(--stp);
+        font-size: rem(22);
+
+        .imprint {
+            padding-top: var(--p63);
+            display: inline-block;
+        }
+
+        h2,
+        h3,
+        nav,
+        ul {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
+
+@include breakpoint($desktop) {
+    footer {
+        padding: var(--p40) var(--p32);
+        position: relative;
+        font-size: rem(34);
+
+        h2,
+        h3 {
+            display: inline-block;
+            padding-top: var(--p63);
+        }
+
+        .imprint {
+            position: absolute;
+            right: var(--p40);
+            top: var(--p40);
+        }
+    }
+}
