@@ -1,0 +1,450 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+}
+
+:root {
+  --font-family: "Source Sans 3";
+  --black: #363636;
+  --grey: #595959;
+  --light-grey: #d5d5d5;
+  --very-light-grey: #f7f7f7;
+  --white: #fff;
+  --brown: #d5874c;
+  --light-brown: #ef9d5f;
+  --orange: #ffad6e;
+  --beige: #fff7f2;
+  --maxwidth: 100rem;
+}
+
+:root {
+  --stf: 1rem;
+  --fss: 1.375rem;
+  --stp: 1rem;
+  --p32: 2rem;
+  --p40: 2.5rem;
+  --p63: 3.9rem;
+  --bp: 4.5rem;
+  --m164: 10.25rem;
+}
+
+@media (min-width: 37.5rem) {
+  :root {
+    --stf: 1.25rem;
+    --fss: 2.125rem;
+    --stp: 2.5rem;
+    --bp: calc(3rem + 2vw);
+  }
+}
+/* source-sans-3-300 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./fonts/source-sans-3-v19-latin_latin-ext-300.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* source-sans-3-600 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/source-sans-3-v19-latin_latin-ext-600.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--root-font-size);
+}
+
+.maxwidth-container {
+  margin-inline: auto;
+  max-width: var(--maxwidth);
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #hamburger {
+    all: unset;
+    position: fixed;
+    z-index: 3;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    padding: var(--stp);
+    height: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  #hamburger [class^=line-] {
+    display: inline-block;
+    height: 1px;
+    border: 1px solid var(--orange);
+    transition: all 0.3s ease-out;
+  }
+  #hamburger .line-1 {
+    width: 25px;
+  }
+  #hamburger .line-2 {
+    margin-block-start: 8px;
+    margin-inline-start: 9px;
+    width: 16px;
+  }
+  #hamburger.mobile-menu-open [class^=line-] {
+    margin-block-start: 4px;
+    transform-origin: center;
+  }
+  #hamburger.mobile-menu-open .line-1 {
+    transform: rotate(-45deg);
+  }
+  #hamburger.mobile-menu-open .line-2 {
+    width: 25px;
+    margin-inline-start: 0;
+    margin-block-start: -2px;
+    transform: rotate(45deg);
+  }
+}
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  #mainnav ul {
+    position: fixed;
+    z-index: 1;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.25s ease-out;
+    padding: var(--stp);
+    background-color: var(--grey);
+    width: 80%;
+    height: 100dvh;
+    font-size: 1.375rem;
+    line-height: 2.5;
+    text-align: right;
+  }
+  #mainnav #hamburger.mobile-menu-open + ul {
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 2;
+    padding-top: var(--p63);
+  }
+}
+@media (min-width: 37.5rem) {
+  nav#mainnav button {
+    display: none;
+    visibility: hidden;
+  }
+  nav#mainnav ul {
+    list-style: none;
+    display: flex;
+    text-decoration-line: underline;
+    gap: 1.25rem;
+  }
+  nav#mainnav ul a {
+    color: var(--orange);
+    font-weight: 600;
+  }
+}
+header {
+  font-size: var(--stf);
+  color: var(--orange);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+header strong {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+header a {
+  color: var(--white);
+  text-decoration: none;
+}
+header .hero-text a {
+  border: 1px solid var(--orange);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+header .hero-text a:hover {
+  background-color: var(--light-brown);
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  header {
+    padding: var(--stp);
+    background-size: cover;
+    background-position: center;
+    height: 100vw;
+    position: relative;
+  }
+  header .hero-text {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    width: 50%;
+    bottom: 10%;
+    padding-inline-end: var(--stp);
+  }
+  header .hero-text h1 {
+    font-size: 2.375rem;
+    padding-bottom: 1.25rem;
+  }
+  header .hero-text a {
+    padding: 0.5rem 1.25rem;
+  }
+}
+@media (min-width: 37.5rem) {
+  header {
+    height: 95dvh;
+    padding: var(--p40) var(--p32);
+    background-color: black;
+    background-position: center right;
+    display: flex;
+    justify-content: space-between;
+  }
+  header .hero-text {
+    position: absolute;
+    top: 40vh;
+    left: 11.6875rem;
+    vertical-align: middle;
+  }
+  header .hero-text h1 {
+    font-size: 4.375rem;
+    padding-bottom: var(--stp);
+  }
+  header .hero-text a {
+    padding: 0.5rem 1rem;
+  }
+}
+@media (min-width: 0rem) and (max-width: 46.8125rem) {
+  header {
+    background-image: url("./images/chris_hero-750.webp");
+  }
+}
+@media (min-width: 46.875rem) and (max-width: 93.6875rem) {
+  header {
+    background-image: url("./images/chris_hero-1500.webp");
+  }
+}
+@media (min-width: 93.75rem) {
+  header {
+    background-image: url("./images/chris_hero-3000.webp");
+  }
+}
+@media only screen and (max-width: 349px) and (min-resolution: 192dpi) {
+  header {
+    background-image: url("./images/chris_hero-750.webp");
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 749px) and (min-resolution: 192dpi) {
+  header {
+    background-image: url("./images/chris_hero-1500.webp");
+  }
+}
+@media only screen and (min-width: 750px) and (min-resolution: 192dpi) {
+  header {
+    background-image: url("./images/chris_hero-3000.webp");
+  }
+}
+footer {
+  background-color: var(--grey);
+  color: var(--white);
+}
+footer small,
+footer a,
+footer h2,
+footer h3 {
+  font-size: var(--stf);
+}
+footer a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+footer .imprint {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  footer {
+    padding: var(--p32) var(--stp);
+    font-size: 1.375rem;
+  }
+  footer .imprint {
+    padding-top: var(--p63);
+    display: inline-block;
+  }
+  footer h2,
+  footer h3,
+  footer nav,
+  footer ul {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media (min-width: 37.5rem) {
+  footer {
+    padding: var(--p40) var(--p32);
+    position: relative;
+    font-size: 2.125rem;
+  }
+  footer h2,
+  footer h3 {
+    display: inline-block;
+    padding-top: var(--p63);
+  }
+  footer .imprint {
+    position: absolute;
+    right: var(--p40);
+    top: var(--p40);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
