@@ -9,10 +9,13 @@ footer {
         font-size: var(--stf);
     }
 
-    a {
-        white-space: nowrap;
+    li {
         overflow: hidden;
         text-overflow: ellipsis;
+
+        a {
+            white-space: nowrap;
+        }
     }
 
     .imprint {

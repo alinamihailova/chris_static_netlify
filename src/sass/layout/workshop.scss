@@ -1,0 +1,313 @@
+section#workshops {
+    hgroup {
+        p {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--brown);
+        }
+    }
+
+    .levels {
+        .level>img {
+            background-color: var(--grey);
+
+            object-fit: contain;
+            border-radius: 50%;
+            padding: var(--stp);
+
+        }
+
+        .level {
+            background-color: var(--black);
+
+            p {
+                color: var(--white);
+
+            }
+
+            .level-text {
+                h3 {
+                    color: var(--orange);
+                }
+
+                a {
+                    cursor: pointer;
+                    border: 1px solid var(--orange);
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: var(--white);
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    background-color: var(--light-brown);
+                }
+            }
+        }
+    }
+}
+
+
+img {
+    max-width: 100%;
+}
+
+@include breakpoint(0, $mobile) {
+    section#workshops {
+        padding-inline: var(--stp);
+        padding-block: var(--p63);
+
+        hgroup {
+            padding: var(--stp);
+
+            h2 {
+                font-size: rem(28);
+            }
+        }
+
+        .levels {
+            .level>img {
+                width: 20vw;
+                height: auto;
+                margin-inline: auto;
+                margin-top: -10%;
+            }
+
+            .level {
+                margin-top: var(--p63);
+                text-align: center;
+                position: relative;
+
+                .count {
+                    position: absolute;
+                    z-index: -1;
+                    top: -18%;
+                    left: 58%;
+                    clip-path: circle();
+                    background-color: var(--light-grey);
+                    font-weight: 600;
+                    font-size: rem(28);
+                    padding: calc(var(--stp) / 1.5);
+
+                    p {
+                        color: var(--brown);
+
+                    }
+                }
+
+                .level-text {
+                    padding: var(--stp);
+                    text-align: left;
+
+                    h3 {
+                        font-size: rem(22);
+                    }
+
+                    p {
+                        line-height: 1.2;
+                        padding-top: calc(var(--stp)/2);
+                        padding-bottom: var(--stp)
+                    }
+
+                    a {
+                        display: inline-block;
+                        padding: rem(8) rem(20);
+                    }
+                }
+
+                blockquote {
+                    img {
+                        width: 10vw;
+                        height: auto;
+                    }
+
+                    p {
+                        font-size: rem(22);
+                        padding-bottom: var(--stp);
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@include breakpoint($desktop) {
+    section#workshops {
+        margin: var(--p63);
+
+        hgroup {
+            padding-bottom: var(--p63);
+
+            p {
+                font-size: rem(20);
+            }
+
+            h2 {
+                font-size: rem(54);
+            }
+        }
+
+        .levels {
+            .level>img {
+                padding: rem(16);
+                vertical-align: middle;
+                margin: auto;
+            }
+
+            .level {
+                display: grid;
+                grid-template-columns: 1fr repeat(4, 2fr);
+
+                .count {
+                    grid-area: 1;
+                    background-color: var(--white);
+
+                    p {
+                        color: var(--black);
+                        font-size: rem(300);
+                        font-weight: 600;
+                        margin-right: rem(-24);
+                    }
+                }
+
+                .level-text {
+                    grid-row: 1;
+                }
+
+                .level-text {
+                    padding: rem(20);
+
+                    h3 {
+                        font-size: rem(34);
+                    }
+
+                    p {
+                        padding-block: calc(var(--stp)/3);
+                        font-size: rem(20);
+                    }
+
+                    a {
+                        display: inline-block;
+                        padding: calc(var(--stp)/5) calc(var(--stp)/2);
+                    }
+                }
+
+                blockquote {
+                    padding: rem(20);
+
+                    position: relative;
+
+                    img {
+                        position: absolute;
+                        width: 60%;
+                        bottom: -3%;
+                        right: 0;
+                    }
+
+                    p {
+                        font-size: rem(34);
+                    }
+                }
+            }
+
+            .level:first-of-type {
+                margin-left: calc(var(--p63)*4);
+
+
+                .count {
+                    p {
+                        line-height: 0.7;
+                        padding-bottom: 67%;
+                    }
+                }
+            }
+
+            .level-text {
+                grid-column: 2 / span 2;
+            }
+
+            img {
+                grid-column: 4;
+            }
+
+            blockquote {
+                grid-column: 5;
+            }
+        }
+
+        .level:nth-of-type(2) {
+            margin-left: calc(var(--p63)*2);
+            margin-right: calc(var(--p63)*2);
+
+
+            margin-block: var(--p40);
+
+            .level-text {
+                grid-column: 4 / span 2;
+            }
+
+            img {
+                grid-column: 3;
+            }
+
+            blockquote {
+                grid-column: 2;
+                grid-row: 1;
+                display: flex;
+
+                p {
+                    margin-top: auto;
+                    align-self: baseline;
+                }
+
+                img {
+                    position: absolute;
+                    top: -10px;
+                }
+            }
+        }
+
+
+        .level:nth-of-type(3) {
+            margin-right: calc(var(--p63)*4);
+
+            .count {
+                line-height: 0.62;
+                padding-top: 85%;
+            }
+
+            .level-text {
+                grid-column: 3 / span 2;
+            }
+
+            img {
+                grid-column: 2;
+            }
+
+            blockquote {
+                grid-column: 5;
+                grid-row: 1;
+                display: flex;
+
+                p {
+                    margin-top: auto;
+                    align-self: baseline;
+                }
+
+                img {
+                    position: absolute;
+                    top: rem(10);
+                    right: rem(-10);
+                }
+            }
+        }
+
+
+
+
+    }
+}

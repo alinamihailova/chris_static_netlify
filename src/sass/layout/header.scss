@@ -16,6 +16,7 @@ header {
 
     .hero-text {
         a {
+            cursor: pointer;
             border: 1px solid var(--orange);
             text-transform: uppercase;
             font-weight: 600;
@@ -59,6 +60,10 @@ header {
 }
 
 @include breakpoint($desktop) {
+    header>a {
+        padding-right: var(--stp);
+    }
+
     header {
         height: 95dvh;
         padding: var(--p40) var(--p32);

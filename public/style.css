@@ -215,6 +215,7 @@ html {
 @media (min-width: 0rem) and (max-width: 37.4375rem) {
   #hamburger {
     all: unset;
+    cursor: pointer;
     position: fixed;
     z-index: 3;
     inset-block-start: 0;
@@ -282,9 +283,11 @@ html {
     visibility: hidden;
   }
   nav#mainnav ul {
+    text-wrap: nowrap;
     list-style: none;
     display: flex;
     text-decoration-line: underline;
+    text-underline-offset: 6px;
     gap: 1.25rem;
   }
   nav#mainnav ul a {
@@ -307,6 +310,7 @@ header a {
   text-decoration: none;
 }
 header .hero-text a {
+  cursor: pointer;
   border: 1px solid var(--orange);
   text-transform: uppercase;
   font-weight: 600;
@@ -340,6 +344,9 @@ header .hero-text a:hover {
   }
 }
 @media (min-width: 37.5rem) {
+  header > a {
+    padding-right: var(--stp);
+  }
   header {
     height: 95dvh;
     padding: var(--p40) var(--p32);
@@ -402,10 +409,12 @@ footer h2,
 footer h3 {
   font-size: var(--stf);
 }
-footer a {
-  white-space: nowrap;
+footer li {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+footer li a {
+  white-space: nowrap;
 }
 footer .imprint {
   color: var(--orange);
@@ -444,6 +453,235 @@ footer .imprint {
     position: absolute;
     right: var(--p40);
     top: var(--p40);
+  }
+}
+section#workshops hgroup p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+section#workshops hgroup h2 {
+  color: var(--brown);
+}
+section#workshops .levels .level > img {
+  background-color: var(--grey);
+  object-fit: contain;
+  border-radius: 50%;
+  padding: var(--stp);
+}
+section#workshops .levels .level {
+  background-color: var(--black);
+}
+section#workshops .levels .level p {
+  color: var(--white);
+}
+section#workshops .levels .level .level-text h3 {
+  color: var(--orange);
+}
+section#workshops .levels .level .level-text a {
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+}
+section#workshops .levels .level .level-text a:hover {
+  background-color: var(--light-brown);
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  section#workshops {
+    padding-inline: var(--stp);
+    padding-block: var(--p63);
+  }
+  section#workshops hgroup {
+    padding: var(--stp);
+  }
+  section#workshops hgroup h2 {
+    font-size: 1.75rem;
+  }
+  section#workshops .levels .level > img {
+    width: 20vw;
+    height: auto;
+    margin-inline: auto;
+    margin-top: -10%;
+  }
+  section#workshops .levels .level {
+    margin-top: var(--p63);
+    text-align: center;
+    position: relative;
+  }
+  section#workshops .levels .level .count {
+    position: absolute;
+    z-index: -1;
+    top: -18%;
+    left: 58%;
+    clip-path: circle();
+    background-color: var(--light-grey);
+    font-weight: 600;
+    font-size: 1.75rem;
+    padding: calc(var(--stp) / 1.5);
+  }
+  section#workshops .levels .level .count p {
+    color: var(--brown);
+  }
+  section#workshops .levels .level .level-text {
+    padding: var(--stp);
+    text-align: left;
+  }
+  section#workshops .levels .level .level-text h3 {
+    font-size: 1.375rem;
+  }
+  section#workshops .levels .level .level-text p {
+    line-height: 1.2;
+    padding-top: calc(var(--stp) / 2);
+    padding-bottom: var(--stp);
+  }
+  section#workshops .levels .level .level-text a {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+  }
+  section#workshops .levels .level blockquote img {
+    width: 10vw;
+    height: auto;
+  }
+  section#workshops .levels .level blockquote p {
+    font-size: 1.375rem;
+    padding-bottom: var(--stp);
+  }
+}
+@media (min-width: 37.5rem) {
+  section#workshops {
+    margin: var(--p63);
+  }
+  section#workshops hgroup {
+    padding-bottom: var(--p63);
+  }
+  section#workshops hgroup p {
+    font-size: 1.25rem;
+  }
+  section#workshops hgroup h2 {
+    font-size: 3.375rem;
+  }
+  section#workshops .levels .level > img {
+    padding: 1rem;
+    vertical-align: middle;
+    margin: auto;
+  }
+  section#workshops .levels .level {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 2fr);
+  }
+  section#workshops .levels .level .count {
+    grid-area: 1;
+    background-color: var(--white);
+  }
+  section#workshops .levels .level .count p {
+    color: var(--black);
+    font-size: 18.75rem;
+    font-weight: 600;
+    margin-right: -1.5rem;
+  }
+  section#workshops .levels .level .level-text {
+    grid-row: 1;
+  }
+  section#workshops .levels .level .level-text {
+    padding: 1.25rem;
+  }
+  section#workshops .levels .level .level-text h3 {
+    font-size: 2.125rem;
+  }
+  section#workshops .levels .level .level-text p {
+    padding-block: calc(var(--stp) / 3);
+    font-size: 1.25rem;
+  }
+  section#workshops .levels .level .level-text a {
+    display: inline-block;
+    padding: calc(var(--stp) / 5) calc(var(--stp) / 2);
+  }
+  section#workshops .levels .level blockquote {
+    padding: 1.25rem;
+    position: relative;
+  }
+  section#workshops .levels .level blockquote img {
+    position: absolute;
+    width: 60%;
+    bottom: -3%;
+    right: 0;
+  }
+  section#workshops .levels .level blockquote p {
+    font-size: 2.125rem;
+  }
+  section#workshops .levels .level:first-of-type {
+    margin-left: calc(var(--p63) * 4);
+  }
+  section#workshops .levels .level:first-of-type .count p {
+    line-height: 0.7;
+    padding-bottom: 67%;
+  }
+  section#workshops .levels .level-text {
+    grid-column: 2/span 2;
+  }
+  section#workshops .levels img {
+    grid-column: 4;
+  }
+  section#workshops .levels blockquote {
+    grid-column: 5;
+  }
+  section#workshops .level:nth-of-type(2) {
+    margin-left: calc(var(--p63) * 2);
+    margin-right: calc(var(--p63) * 2);
+    margin-block: var(--p40);
+  }
+  section#workshops .level:nth-of-type(2) .level-text {
+    grid-column: 4/span 2;
+  }
+  section#workshops .level:nth-of-type(2) img {
+    grid-column: 3;
+  }
+  section#workshops .level:nth-of-type(2) blockquote {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+  }
+  section#workshops .level:nth-of-type(2) blockquote p {
+    margin-top: auto;
+    align-self: baseline;
+  }
+  section#workshops .level:nth-of-type(2) blockquote img {
+    position: absolute;
+    top: -10px;
+  }
+  section#workshops .level:nth-of-type(3) {
+    margin-right: calc(var(--p63) * 4);
+  }
+  section#workshops .level:nth-of-type(3) .count {
+    line-height: 0.62;
+    padding-top: 85%;
+  }
+  section#workshops .level:nth-of-type(3) .level-text {
+    grid-column: 3/span 2;
+  }
+  section#workshops .level:nth-of-type(3) img {
+    grid-column: 2;
+  }
+  section#workshops .level:nth-of-type(3) blockquote {
+    grid-column: 5;
+    grid-row: 1;
+    display: flex;
+  }
+  section#workshops .level:nth-of-type(3) blockquote p {
+    margin-top: auto;
+    align-self: baseline;
+  }
+  section#workshops .level:nth-of-type(3) blockquote img {
+    position: absolute;
+    top: 0.625rem;
+    right: -0.625rem;
   }
 }
 

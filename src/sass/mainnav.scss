@@ -35,9 +35,11 @@
         }
 
         ul {
+            text-wrap: nowrap;
             list-style: none;
             display: flex;
             text-decoration-line: underline;
+            text-underline-offset: 6px;
             gap: rem(20);
 
             a {

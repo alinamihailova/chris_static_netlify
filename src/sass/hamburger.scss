@@ -1,6 +1,7 @@
 @include breakpoint(0, $mobile) {
     #hamburger {
         all: unset;
+        cursor: pointer;
 
 
         position: fixed;
