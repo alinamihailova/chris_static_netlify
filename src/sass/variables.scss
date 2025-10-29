@@ -20,6 +20,8 @@
 // BREAKPOINTS
 $mobile: 599; // passe diesen Wert später an
 $desktop: $mobile + 1;
+$mobile-workshop: 1099;
+$desktop-workshop: $mobile-workshop + 1;
 
 // VIEWPORT BASED VARIABLES
 :root {
@@ -32,9 +34,22 @@ $desktop: $mobile + 1;
     --p63: 3.9rem;
     --bp: 4.5rem; // standard padding for sections/components
     --m164: 10.25rem;
+
+    --icon-width: 23vw;
 }
 
 @include breakpoint($desktop) {
+    :root {
+        --stf: 1.25rem; // standard font-size 20px
+        --fss: 2.125rem; // font-size small 34px
+        // ...
+        --stp: 2.5rem; // standard-padding 20px
+        // ...
+        --bp: calc(3rem + 2vw);
+    }
+}
+
+@include breakpoint($desktop-workshop) {
     :root {
         --stf: 1.25rem; // standard font-size 20px
         --fss: 2.125rem; // font-size small 34px

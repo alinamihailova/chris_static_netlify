@@ -16,8 +16,6 @@ section#workshops {
 
             object-fit: contain;
             border-radius: 50%;
-            padding: var(--stp);
-
         }
 
         .level {
@@ -31,6 +29,11 @@ section#workshops {
             .level-text {
                 h3 {
                     color: var(--orange);
+                }
+
+                p {
+                    line-height: 1.4;
+
                 }
 
                 a {
@@ -55,7 +58,7 @@ img {
     max-width: 100%;
 }
 
-@include breakpoint(0, $mobile) {
+@include breakpoint(0, $mobile-workshop) {
     section#workshops {
         padding-inline: var(--stp);
         padding-block: var(--p63);
@@ -70,21 +73,23 @@ img {
 
         .levels {
             .level>img {
-                width: 20vw;
+                width: var(--icon-width);
                 height: auto;
                 margin-inline: auto;
-                margin-top: -10%;
+                margin-top: calc(var(--icon-width) / -2);
+                padding: var(--stp);
+
             }
 
             .level {
-                margin-top: var(--p63);
+                margin-top: calc(var(--icon-width)/2 + var(--p32));
                 text-align: center;
                 position: relative;
 
                 .count {
                     position: absolute;
                     z-index: -1;
-                    top: -18%;
+                    top: calc(var(--icon-width)/-2 - 12px);
                     left: 58%;
                     clip-path: circle();
                     background-color: var(--light-grey);
@@ -107,14 +112,13 @@ img {
                     }
 
                     p {
-                        line-height: 1.2;
                         padding-top: calc(var(--stp)/2);
                         padding-bottom: var(--stp)
                     }
 
                     a {
                         display: inline-block;
-                        padding: rem(8) rem(20);
+                        padding: var(--stp) var(--p32);
                     }
                 }
 
@@ -135,15 +139,15 @@ img {
 
 }
 
-@include breakpoint($desktop) {
+@include breakpoint($desktop-workshop) {
     section#workshops {
-        margin: var(--p63);
+        margin: var(--m164);
 
         hgroup {
             padding-bottom: var(--p63);
 
             p {
-                font-size: rem(20);
+                font-size: var(--stf);
             }
 
             h2 {
@@ -156,11 +160,14 @@ img {
                 padding: rem(16);
                 vertical-align: middle;
                 margin: auto;
+                padding: var(--p32);
+
             }
 
             .level {
                 display: grid;
                 grid-template-columns: 1fr repeat(4, 2fr);
+                min-height: rem(330);
 
                 .count {
                     grid-area: 1;
@@ -171,6 +178,8 @@ img {
                         font-size: rem(300);
                         font-weight: 600;
                         margin-right: rem(-24);
+                        text-align: right;
+
                     }
                 }
 
@@ -179,43 +188,44 @@ img {
                 }
 
                 .level-text {
-                    padding: rem(20);
+                    padding: var(--stp);
 
                     h3 {
-                        font-size: rem(34);
+                        font-size: var(--fss);
                     }
 
                     p {
-                        padding-block: calc(var(--stp)/3);
-                        font-size: rem(20);
+                        padding-block: calc(var(--stp)/2);
+                        font-size: var(--stf);
                     }
 
                     a {
+                        font-size: var(--stf);
                         display: inline-block;
-                        padding: calc(var(--stp)/5) calc(var(--stp)/2);
+                        padding: calc(var(--stp)/2) var(--stp);
                     }
                 }
 
                 blockquote {
-                    padding: rem(20);
+                    padding: var(--stf);
 
                     position: relative;
 
                     img {
                         position: absolute;
-                        width: 60%;
+                        width: 50%;
                         bottom: -3%;
                         right: 0;
                     }
 
                     p {
-                        font-size: rem(34);
+                        font-size: var(--fss);
                     }
                 }
             }
 
             .level:first-of-type {
-                margin-left: calc(var(--p63)*4);
+                margin-left: 10vw;
 
 
                 .count {
@@ -240,11 +250,22 @@ img {
         }
 
         .level:nth-of-type(2) {
-            margin-left: calc(var(--p63)*2);
-            margin-right: calc(var(--p63)*2);
+            margin-left: 5vw;
+            margin-right: 5vw;
 
 
             margin-block: var(--p40);
+
+            .count {
+                display: flex;
+                align-items: center;
+                vertical-align: middle;
+                justify-content: flex-end;
+
+                p {
+                    margin-block: auto;
+                }
+            }
 
             .level-text {
                 grid-column: 4 / span 2;
@@ -273,11 +294,11 @@ img {
 
 
         .level:nth-of-type(3) {
-            margin-right: calc(var(--p63)*4);
+            margin-right: 10vw;
 
             .count {
                 line-height: 0.62;
-                padding-top: 85%;
+                padding-top: 97%;
             }
 
             .level-text {

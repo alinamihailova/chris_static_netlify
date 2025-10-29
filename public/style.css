@@ -166,9 +166,18 @@ table {
   --p63: 3.9rem;
   --bp: 4.5rem;
   --m164: 10.25rem;
+  --icon-width: 23vw;
 }
 
 @media (min-width: 37.5rem) {
+  :root {
+    --stf: 1.25rem;
+    --fss: 2.125rem;
+    --stp: 2.5rem;
+    --bp: calc(3rem + 2vw);
+  }
+}
+@media (min-width: 68.75rem) {
   :root {
     --stf: 1.25rem;
     --fss: 2.125rem;
@@ -466,7 +475,6 @@ section#workshops .levels .level > img {
   background-color: var(--grey);
   object-fit: contain;
   border-radius: 50%;
-  padding: var(--stp);
 }
 section#workshops .levels .level {
   background-color: var(--black);
@@ -476,6 +484,9 @@ section#workshops .levels .level p {
 }
 section#workshops .levels .level .level-text h3 {
   color: var(--orange);
+}
+section#workshops .levels .level .level-text p {
+  line-height: 1.4;
 }
 section#workshops .levels .level .level-text a {
   cursor: pointer;
@@ -493,7 +504,7 @@ img {
   max-width: 100%;
 }
 
-@media (min-width: 0rem) and (max-width: 37.4375rem) {
+@media (min-width: 0rem) and (max-width: 68.6875rem) {
   section#workshops {
     padding-inline: var(--stp);
     padding-block: var(--p63);
@@ -505,20 +516,21 @@ img {
     font-size: 1.75rem;
   }
   section#workshops .levels .level > img {
-    width: 20vw;
+    width: var(--icon-width);
     height: auto;
     margin-inline: auto;
-    margin-top: -10%;
+    margin-top: calc(var(--icon-width) / -2);
+    padding: var(--stp);
   }
   section#workshops .levels .level {
-    margin-top: var(--p63);
+    margin-top: calc(var(--icon-width) / 2 + var(--p32));
     text-align: center;
     position: relative;
   }
   section#workshops .levels .level .count {
     position: absolute;
     z-index: -1;
-    top: -18%;
+    top: calc(var(--icon-width) / -2 - 12px);
     left: 58%;
     clip-path: circle();
     background-color: var(--light-grey);
@@ -537,13 +549,12 @@ img {
     font-size: 1.375rem;
   }
   section#workshops .levels .level .level-text p {
-    line-height: 1.2;
     padding-top: calc(var(--stp) / 2);
     padding-bottom: var(--stp);
   }
   section#workshops .levels .level .level-text a {
     display: inline-block;
-    padding: 0.5rem 1.25rem;
+    padding: var(--stp) var(--p32);
   }
   section#workshops .levels .level blockquote img {
     width: 10vw;
@@ -554,15 +565,15 @@ img {
     padding-bottom: var(--stp);
   }
 }
-@media (min-width: 37.5rem) {
+@media (min-width: 68.75rem) {
   section#workshops {
-    margin: var(--p63);
+    margin: var(--m164);
   }
   section#workshops hgroup {
     padding-bottom: var(--p63);
   }
   section#workshops hgroup p {
-    font-size: 1.25rem;
+    font-size: var(--stf);
   }
   section#workshops hgroup h2 {
     font-size: 3.375rem;
@@ -571,10 +582,12 @@ img {
     padding: 1rem;
     vertical-align: middle;
     margin: auto;
+    padding: var(--p32);
   }
   section#workshops .levels .level {
     display: grid;
     grid-template-columns: 1fr repeat(4, 2fr);
+    min-height: 20.625rem;
   }
   section#workshops .levels .level .count {
     grid-area: 1;
@@ -585,39 +598,41 @@ img {
     font-size: 18.75rem;
     font-weight: 600;
     margin-right: -1.5rem;
+    text-align: right;
   }
   section#workshops .levels .level .level-text {
     grid-row: 1;
   }
   section#workshops .levels .level .level-text {
-    padding: 1.25rem;
+    padding: var(--stp);
   }
   section#workshops .levels .level .level-text h3 {
-    font-size: 2.125rem;
+    font-size: var(--fss);
   }
   section#workshops .levels .level .level-text p {
-    padding-block: calc(var(--stp) / 3);
-    font-size: 1.25rem;
+    padding-block: calc(var(--stp) / 2);
+    font-size: var(--stf);
   }
   section#workshops .levels .level .level-text a {
+    font-size: var(--stf);
     display: inline-block;
-    padding: calc(var(--stp) / 5) calc(var(--stp) / 2);
+    padding: calc(var(--stp) / 2) var(--stp);
   }
   section#workshops .levels .level blockquote {
-    padding: 1.25rem;
+    padding: var(--stf);
     position: relative;
   }
   section#workshops .levels .level blockquote img {
     position: absolute;
-    width: 60%;
+    width: 50%;
     bottom: -3%;
     right: 0;
   }
   section#workshops .levels .level blockquote p {
-    font-size: 2.125rem;
+    font-size: var(--fss);
   }
   section#workshops .levels .level:first-of-type {
-    margin-left: calc(var(--p63) * 4);
+    margin-left: 10vw;
   }
   section#workshops .levels .level:first-of-type .count p {
     line-height: 0.7;
@@ -633,9 +648,18 @@ img {
     grid-column: 5;
   }
   section#workshops .level:nth-of-type(2) {
-    margin-left: calc(var(--p63) * 2);
-    margin-right: calc(var(--p63) * 2);
+    margin-left: 5vw;
+    margin-right: 5vw;
     margin-block: var(--p40);
+  }
+  section#workshops .level:nth-of-type(2) .count {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: flex-end;
+  }
+  section#workshops .level:nth-of-type(2) .count p {
+    margin-block: auto;
   }
   section#workshops .level:nth-of-type(2) .level-text {
     grid-column: 4/span 2;
@@ -657,11 +681,11 @@ img {
     top: -10px;
   }
   section#workshops .level:nth-of-type(3) {
-    margin-right: calc(var(--p63) * 4);
+    margin-right: 10vw;
   }
   section#workshops .level:nth-of-type(3) .count {
     line-height: 0.62;
-    padding-top: 85%;
+    padding-top: 97%;
   }
   section#workshops .level:nth-of-type(3) .level-text {
     grid-column: 3/span 2;
@@ -682,6 +706,183 @@ img {
     position: absolute;
     top: 0.625rem;
     right: -0.625rem;
+  }
+}
+section#about p {
+  line-height: 1.4;
+}
+section#about {
+  font-size: var(--stf);
+  background-color: var(--beige);
+}
+section#about hgroup p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+section#about hgroup h2 {
+  color: var(--orange);
+}
+section#about a {
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--black);
+  text-decoration: 0;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  margin-top: var(--p32);
+}
+section#about a:hover {
+  background-color: var(--light-brown);
+}
+
+@media (min-width: 0rem) and (max-width: 37.4375rem) {
+  section#about {
+    padding-block: var(--p63);
+  }
+  section#about hgroup {
+    padding: var(--stp);
+  }
+  section#about hgroup h2 {
+    font-size: 1.75rem;
+  }
+  section#about .text {
+    padding-inline: var(--stp);
+  }
+  section#about .text > p:not(:first-child) {
+    padding-top: var(--stp);
+  }
+}
+@media (min-width: 37.5rem) {
+  section#about {
+    padding: var(--m164);
+  }
+  section#about hgroup h2 {
+    font-size: 3.375rem;
+  }
+  section#about .text p {
+    padding-top: var(--p32);
+  }
+  section#about .text a {
+    padding: calc(var(--stp) / 2) var(--stp);
+  }
+  section#about .about-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  section#about .about-wrapper .about-text {
+    padding: var(--p32);
+    flex: 1;
+  }
+  section#about .about-wrapper .about-img {
+    flex: 0 0 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  section#about .about-wrapper .about-img img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    display: block;
+  }
+}
+section#news hgroup p {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+section#news hgroup h2 {
+  color: var(--brown);
+}
+section#news p {
+  line-height: 1.4;
+  font-size: var(--stf);
+}
+section#news div.articles {
+  display: flex;
+  flex-direction: row;
+  gap: var(--stp);
+}
+section#news div.articles article img {
+  aspect-ratio: 5/3;
+  object-fit: cover;
+  width: 100%;
+}
+section#news div.articles article div.text {
+  padding: var(--stp);
+  background-color: var(--very-light-grey);
+}
+section#news div.articles article div.text h3 a {
+  color: var(--brown);
+}
+section#news div.articles article div.text > a {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid var(--orange);
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--black);
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+}
+section#news div.articles article div.text > a:hover {
+  background-color: var(--light-brown);
+}
+
+@media (min-width: 0rem) and (max-width: 68.6875rem) {
+  section#news {
+    margin-left: var(--stp);
+    margin-block: var(--p63);
+  }
+  section#news hgroup {
+    padding-block: var(--stp);
+  }
+  section#news hgroup h2 {
+    font-size: 1.75rem;
+  }
+  section#news div.articles {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+  }
+  section#news div.articles article {
+    flex: 0 0 70vw;
+  }
+  section#news div.articles article div.text h3 a {
+    font-size: 1.375rem;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+  }
+  section#news div.articles article div.text p {
+    padding-top: calc(var(--stp));
+    padding-bottom: var(--p32);
+  }
+}
+@media (min-width: 68.75rem) {
+  section#news {
+    margin: var(--m164);
+  }
+  section#news hgroup {
+    padding-bottom: var(--p63);
+  }
+  section#news hgroup p {
+    font-size: var(--stf);
+  }
+  section#news hgroup h2 {
+    font-size: 3.8125rem;
+  }
+  section#news div.articles article {
+    flex-basis: calc((100% - var(--stp) * 2) / 3);
+  }
+  section#news div.articles article div.text h3 a {
+    font-size: 2.125rem;
+    text-underline-offset: 6px;
+  }
+  section#news div.articles article div.text p {
+    padding-top: calc(var(--stp) / 2);
+    padding-bottom: var(--stp);
   }
 }
 
